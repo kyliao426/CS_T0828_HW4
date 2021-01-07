@@ -87,12 +87,12 @@ class run:
 
             train_val_handle = sess.run(train_val_iterator.string_handle())
 
-            print("Training...")
+            print("EDSR Training...")
             for e in range(1, self.epochs+1):
 
                 sess.run(train_initializer)
                 step, train_loss = 0, 0
-
+                print('epoch{} begin...'.format(e))
                 try:
                     while True:
                         o, l, t, l_rate = sess.run([out, loss, train_op, lr], feed_dict={handle:train_val_handle,
@@ -101,6 +101,7 @@ class run:
                         step += 1
                         global_step += 1
 
+                        print('epoch{} step{} begin...'.format(e, step))
                         if step % 1000 == 0:
                             save_path = saver.save(sess, self.ckpt_path + "edsr_ckpt")
                             print("Step nr: [{}/{}] - Loss: {:.5f} - Lr: {:.7f}".format(step, "?", float(train_loss/step), l_rate))
@@ -160,10 +161,13 @@ class run:
 
             bicubic_image = cv2.resize(fullimg, None, fx=self.scale, fy=self.scale, interpolation=cv2.INTER_CUBIC)
 
-            cv2.imshow('Original image', fullimg)
-            cv2.imshow('EDSR upscaled image', HR_image)
-            cv2.imshow('Bicubic upscaled image', bicubic_image)
-            cv2.waitKey(0)
+            # cv2.imshow('Original image', fullimg)
+            # cv2.imshow('EDSR upscaled image', HR_image)
+            # cv2.imshow('Bicubic upscaled image', bicubic_image)
+            
+            (filepath, tempfilename) = os.path.split(path)
+            cv2.imwrite(os.path.join('result', tempfilename), HR_image)
+            # cv2.waitKey(0)
 
         sess.close()
 

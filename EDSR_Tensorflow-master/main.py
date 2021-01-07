@@ -41,7 +41,9 @@ if __name__ == "__main__":
 
     # INIT
     scale = args.scale
-    meanbgr = [103.1545782, 111.561547, 114.35629928]
+    # meanbgr = [103.1545782, 111.561547, 114.35629928]
+    meanbgr = [91.19977731, 114.296126, 122.37348829]
+
 
     # Set checkpoint paths for different scales and models
     ckpt_path = ""
@@ -66,12 +68,12 @@ if __name__ == "__main__":
         run.train(args.traindir, args.validdir)
 
     if args.test:
-        run.testFromPb(args.image)
-        #run.test(args.image)
+        # run.testFromPb(args.image)
+        run.test(args.image)
     
     if args.upscale:
-        run.upscaleFromPb(args.image)
-        #run.upscale(args.image)
+        # run.upscaleFromPb(args.image)
+        run.upscale(args.image)
 
     if args.export:
         run.export(args.quant)
