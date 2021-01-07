@@ -50,6 +50,9 @@
  ## Methodology
  ![images](https://github.com/kyliao426/CS_T0828_HW4/blob/main/EDSR_Tensorflow-master/images/EDSR.png) </br>
   The major feature od EDSR is its residual blocks, the author removes the batch normalization layers from residual blocks. The author thinks that Since batch normalization layers normalize the features, they get rid of range flexibility from networks by normalizing the features, it is better to remove them. And because of removal of batch normalization layers, EDSR can save approximately 40% of memory usage during training, compared to SRResNet. Consequently, it can build up a larger model that has better performance than conventional ResNet structure under limited computational resources. In summary, EDSR has 32 residual blocks and 256 filters which is 2 times and 4 times more than SRResNet’s 16 and 64.
+  Following are some hyperparameters in my experiment.
+  | Hyperparameters | Batch size | Epochs | Learning rate |
+  | value | 16 | 30 | 0.0001 |
   
  ## Final Result
   <img src="https://github.com/kyliao426/CS_T0828_HW4/blob/main/bicubic/04.png" > 
