@@ -24,14 +24,20 @@
  ## Reproducing Submission
     +-EDSR-TensorFlow
     |  +-training_hr_images
-    |  |  -training_images
+    |  |  -training_image1
+    |  |  -training_image2
+    |  |  -training_image3
+    |  |   ...
     |  +-testing_lr_images
-    |  |  -testing_images
-    |  data_utils.py
-    |  edsr.py
-    |  main.py
-    |  preprocess.py
-    |  run.py
+    |  |  -testing_image1
+    |  |  -testing_image2
+    |  |  -testing_image3 
+    |  |   ...
+    |  -data_utils.py
+    |  -edsr.py
+    |  -main.py
+    |  -preprocess.py
+    |  -run.py
  
  To reproduce my submission, you can follow following steps:
  #### 1. Download EDSR-Tensorflow
