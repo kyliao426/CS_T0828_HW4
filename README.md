@@ -36,6 +36,7 @@
  To reproduce my submission, you can follow following steps:
  #### 1. Download EDSR-Tensorflow
    You can download the source code from above or from [here](https://github.com/Saafke/EDSR_Tensorflow). After download the code, please create folder just like above.
+   I have modified some codes so that it can output images normally.
  #### 2. Download dataset
    You can download thte dataset from [here](https://drive.google.com/drive/u/0/folders/1H-sIY7zj42Fex1ZjxxSC3PV1pK4Mij6x).
  #### 3. Run
